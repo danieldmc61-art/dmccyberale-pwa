@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>DMCCYBERALE</title>
+
+<link rel="manifest" href="manifest.json">
 
 <meta name="theme-color" content="#00c3ff">
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -15,195 +19,236 @@ box-sizing:border-box;
 }
 
 body{
-background:#050505;
 font-family:Arial,sans-serif;
+background:#050505;
 color:white;
+overflow-x:hidden;
+}
+
+.hero{
+height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-min-height:100vh;
+text-align:center;
 padding:20px;
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),
+url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
 }
 
-.container{
-max-width:700px;
-width:100%;
-text-align:center;
+.box{
+max-width:800px;
+background:rgba(0,0,0,0.6);
+padding:50px;
+border-radius:25px;
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.1);
 }
 
 .logo{
-width:130px;
-height:130px;
-background:linear-gradient(135deg,#00c3ff,#0099cc);
-margin:0 auto 30px;
-border-radius:30px;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:60px;
+font-size:80px;
 font-weight:bold;
-color:#050505;
-box-shadow:0 0 40px rgba(0,195,255,0.5);
-animation:float 3s ease-in-out infinite;
-}
-
-@keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-15px);}
+color:#00c3ff;
+margin-bottom:20px;
+text-shadow:0 0 20px #00c3ff;
 }
 
 h1{
-font-size:48px;
+font-size:55px;
+margin-bottom:20px;
+}
+
+p{
+font-size:20px;
+color:#ddd;
+line-height:1.6;
+margin-bottom:30px;
+}
+
+.buttons{
+display:flex;
+gap:20px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+button{
+padding:18px 35px;
+border:none;
+border-radius:12px;
+font-size:18px;
+cursor:pointer;
+font-weight:bold;
+transition:0.3s;
+}
+
+.install{
+background:#00c3ff;
+color:#000;
+}
+
+.install:hover{
+transform:scale(1.05);
+}
+
+.reload{
+background:#222;
+color:white;
+}
+
+.reload:hover{
+background:#333;
+}
+
+.features{
+padding:80px 20px;
+background:#0a0a0a;
+text-align:center;
+}
+
+.features h2{
+font-size:40px;
+margin-bottom:50px;
+color:#00c3ff;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
+}
+
+.card{
+background:#111;
+padding:30px;
+border-radius:20px;
+border:1px solid #222;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#00c3ff;
+}
+
+.card h3{
 margin-bottom:15px;
 color:#00c3ff;
 }
 
-p{
-font-size:18px;
-color:#cccccc;
-margin-bottom:30px;
-line-height:1.6;
-}
-
-.status{
-background:#101820;
-border:1px solid #00c3ff;
-padding:20px;
-border-radius:15px;
-margin-bottom:30px;
-}
-
-.status div{
-margin:10px 0;
-font-size:17px;
-}
-
-.features{
-background:#0f1115;
+footer{
 padding:30px;
-border-radius:15px;
-border:1px solid #1f2937;
-margin-bottom:30px;
-text-align:left;
-}
-
-.features h2{
-margin-bottom:20px;
-color:#00c3ff;
 text-align:center;
-}
-
-.features li{
-margin-bottom:12px;
-font-size:17px;
-}
-
-button{
-padding:15px 35px;
-border:none;
-border-radius:10px;
-font-size:16px;
-font-weight:bold;
-cursor:pointer;
-margin:10px;
-transition:0.3s;
-}
-
-.btn-primary{
-background:#00c3ff;
-color:#050505;
-}
-
-.btn-primary:hover{
-transform:scale(1.05);
-}
-
-.btn-secondary{
-background:#1f2937;
-color:white;
-}
-
-.footer{
-margin-top:30px;
-font-size:14px;
+background:black;
 color:#666;
 }
 
 @media(max-width:768px){
 
 h1{
-font-size:34px;
+font-size:38px;
 }
 
 .logo{
-width:100px;
-height:100px;
-font-size:45px;
+font-size:55px;
 }
 
-button{
-width:100%;
+.box{
+padding:30px;
 }
 
 }
+
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<section class="hero">
+
+<div class="box">
 
 <div class="logo">DC</div>
 
 <h1>DMCCYBERALE</h1>
 
 <p>
-Aplicativo Progressive Web App (PWA)<br>
-Online • Instalável • Offline
+Plataforma PWA moderna hospedada no GitHub Pages.<br>
+Instalável no celular • Online • Offline • Responsiva.
 </p>
 
-<div class="status">
-<div>✅ Sistema Online</div>
-<div>✅ GitHub Pages Ativo</div>
-<div>✅ PWA Funcionando</div>
-<div>✅ Compatível com Mobile/Desktop</div>
-</div>
+<div class="buttons">
 
-<div class="features">
-<h2>Funcionalidades</h2>
-
-<ul>
-<li>✔️ Progressive Web App</li>
-<li>✔️ Instalação no celular</li>
-<li>✔️ Funciona offline</li>
-<li>✔️ Cache automático</li>
-<li>✔️ Layout responsivo</li>
-<li>✔️ Performance otimizada</li>
-<li>✔️ GitHub Pages integrado</li>
-</ul>
-</div>
-
-<button class="btn-primary" onclick="instalarApp()">
+<button class="install" onclick="instalarApp()">
 Instalar Aplicativo
 </button>
 
-<button class="btn-secondary" onclick="location.reload()">
-Atualizar Página
+<button class="reload" onclick="location.reload()">
+Atualizar
 </button>
 
-<div class="footer">
-DMCCYBERALE © 2026
 </div>
 
 </div>
+
+</section>
+
+<section class="features">
+
+<h2>Recursos do Sistema</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>PWA</h3>
+<p>Aplicativo instalável diretamente no celular.</p>
+</div>
+
+<div class="card">
+<h3>Offline</h3>
+<p>Funciona mesmo sem internet.</p>
+</div>
+
+<div class="card">
+<h3>Responsivo</h3>
+<p>Compatível com desktop e mobile.</p>
+</div>
+
+<div class="card">
+<h3>GitHub Pages</h3>
+<p>Hospedagem online gratuita.</p>
+</div>
+
+<div class="card">
+<h3>Performance</h3>
+<p>Carregamento rápido e otimizado.</p>
+</div>
+
+<div class="card">
+<h3>Segurança</h3>
+<p>HTTPS ativo automaticamente.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+DMCCYBERALE © 2026
+</footer>
 
 <script>
 
 let deferredPrompt;
 
-window.addEventListener('beforeinstallprompt',(e)=>{
+window.addEventListener('beforeinstallprompt', (e) => {
 e.preventDefault();
-deferredPrompt=e;
+deferredPrompt = e;
 });
 
 function instalarApp(){
@@ -212,21 +257,9 @@ if(deferredPrompt){
 
 deferredPrompt.prompt();
 
-deferredPrompt.userChoice.then((choiceResult)=>{
-
-if(choiceResult.outcome==='accepted'){
-alert('Aplicativo instalado com sucesso!');
-}else{
-alert('Instalação cancelada');
-}
-
-deferredPrompt=null;
-
-});
-
 }else{
 
-alert('Seu navegador já pode instalar este app pelo menu do navegador.');
+alert("Use o menu do navegador para instalar o aplicativo.");
 
 }
 
@@ -234,13 +267,7 @@ alert('Seu navegador já pode instalar este app pelo menu do navegador.');
 
 if('serviceWorker' in navigator){
 
-navigator.serviceWorker.register('./sw.js')
-.then(()=>{
-console.log('Service Worker ativo');
-})
-.catch((err)=>{
-console.log(err);
-});
+navigator.serviceWorker.register('./sw.js');
 
 }
 
